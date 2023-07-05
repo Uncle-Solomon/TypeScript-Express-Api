@@ -10,9 +10,9 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   authentication: {
-    password: { type: String, required: true, select: true },
-    salt: { type: String, select: true },
-    sessionToken: { type: String, select: true },
+    password: { type: String, required: true, select: false },
+    salt: { type: String, select: false },
+    sessionToken: { type: String, select: false },
   },
 });
 
