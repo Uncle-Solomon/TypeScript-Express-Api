@@ -7,6 +7,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
+import router from "./routes";
+
 dotenv.config();
 
 const app = express();
@@ -21,6 +23,7 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+app.use("/", router());
 const server = http.createServer(app);
 
 server.listen(8080, () => {
