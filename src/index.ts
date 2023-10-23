@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import http from "http";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
@@ -24,6 +24,9 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.use("/", router());
+app.get("/", (req: Request, res: Response) => {
+  res.send("successfully deployed to vercel");
+});
 const server = http.createServer(app);
 
 server.listen(8080, () => {

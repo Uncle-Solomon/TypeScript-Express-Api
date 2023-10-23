@@ -21,6 +21,9 @@ app.use((0, compression_1.default)());
 app.use((0, cookie_parser_1.default)());
 app.use(body_parser_1.default.json());
 app.use("/", (0, routes_1.default)());
+app.get("/", (req, res) => {
+    res.send("successfully deployed to vercel");
+});
 const server = http_1.default.createServer(app);
 server.listen(8080, () => {
     console.log("Server running at http://localhost:8080/");
